@@ -1,10 +1,12 @@
 import React from 'react';
+import UseInputApp from './UseInput';
 
 function App() {
   return (
-    <div>
-      App
-    </div>
+    <>
+      <UseInputApp />
+      <div>------------------------------------------------------------</div>
+    </>
   );
 }
 
