@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Usetabs from './UseTabs';
 
 const content = [
@@ -19,7 +19,7 @@ export default function useTabsApp () {
         <div>
             <li><h1>#UseTabs#</h1></li>
             {content.map((section, index) => (
-                <button onClick={() => changeItem(index)}>{section.tab}</button>
+                <button key={index} onClick={() => changeItem(index)}>{section.tab}</button>
             ))}
             <div>{currentItem.content}</div>
         </div>
