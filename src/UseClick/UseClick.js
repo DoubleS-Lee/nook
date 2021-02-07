@@ -1,8 +1,9 @@
 import { useEffect, useRef } from 'react';
 
 const UseClick = (initialClick) => {
-    const element = useRef();
+    const ref = useRef();
     useEffect (() => {
+        const element = ref;
         // useEffect 끝에 ,[]를 추가하면 처음 실행될때 한번만 useEffect를 실행하는데
         // 이때 밑에 함수를 한번만 실행한다
         if (element.current){
@@ -14,12 +15,12 @@ const UseClick = (initialClick) => {
                 element.current.removeEventListener("click", initialClick)
             }
         };
-    }, []);
+    }, [initialClick]);
     
     if (typeof initialClick !== "function") {
         return;
     }
-    return element;
+    return ref;
 };
 
 export default UseClick;
